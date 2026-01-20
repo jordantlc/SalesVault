@@ -13,7 +13,7 @@ st.markdown("""
     .main { background-color: #f5f7f9; }
     .stButton>button { background-color: #2e7d32; color: white; border-radius: 8px; }
     </style>
-    """, unsafe_base64=True)
+    """, unsafe_allow_html=True) # <-- Changed to unsafe_allow_html
 
 st.title("🛡️ SalesVault: Sales Development Command")
 st.write(f"Logged in as: **{st.experimental_user.email if hasattr(st, 'experimental_user') else 'SDR User'}**")

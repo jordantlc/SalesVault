@@ -55,11 +55,11 @@ st.divider()
 st.subheader("Manager View: Conversion Funnel")
 
 
-funnel_data = dict(
+funnel_data = pd.DataFrame(dict(
     number=[120, 45, 18, 5],
     stage=["Emails Sent", "Calls Made", "Meetings Booked", "Deals Closed"]
-)
-fig_funnel = px.funnel(funnel_data, x='number', y='stage', color_discrete_sequence=['#1f77b4'])
+))
+fig_funnel = px.funnel(funnel_data, x='number', y='stage')
 st.plotly_chart(fig_funnel, use_container_width=True)
 
 # --- VISUAL 2: THE "SWEET SPOT" HEATMAP ---

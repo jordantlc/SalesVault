@@ -16,8 +16,9 @@ st.markdown("""
     """, unsafe_allow_html=True) # <-- Changed to unsafe_allow_html
 
 st.title("🛡️ SalesVault: Sales Development Command")
-st.write(f"Logged in as: **{st.user.email if st.user.email else 'SDR User'}**")
-
+# This checks if email exists safely without crashing the app
+user_email = getattr(st.user, "email", "SDR User")
+st.write(f"Logged in as: **{user_email}**")
 # --- SIDEBAR: MANUAL DATA ENTRY ---
 with st.sidebar:
     st.header("Log Activity")

@@ -16,7 +16,7 @@ st.markdown("""
     """, unsafe_allow_html=True) # <-- Changed to unsafe_allow_html
 
 st.title("🛡️ SalesVault: Sales Development Command")
-st.write(f"Logged in as: **{st.experimental_user.email if hasattr(st, 'experimental_user') else 'SDR User'}**")
+st.write(f"Logged in as: **{st.user.email if st.user.email else 'SDR User'}**")
 
 # --- SIDEBAR: MANUAL DATA ENTRY ---
 with st.sidebar:
